@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+           
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../yolo/yolo.css">
+    <script src="../yolo/yolo.js"></script>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <div class="container-fluid">
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="title">The O'Hare Play</h1>
+            <h2 class="become">Live Your Life or Start a New One</h2>
+            <h3 class="join">Become an "Investor"</h3>
+          </div>
+        </div>
+  </div>
+  <hr class="section">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="plane">
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 desription">
+          <h2 class="become">What is the O'Hare Play?</h2>
+          <h2 class="join">Bet all your money, yes even your kid's college fund, in some cash burn of a company and cross your fingers</h2>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <hr class="section1">
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+            <h2 class="become">But what if I lose all my money?</h2>
+            <h2 class="join">lol</h2>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <hr class="section2">
+    </div>
+    <div class="container-fluid-new">
+      <div class="row chart">
+          <div class="col-md-3">
+              <div id="chart">
+    
+              </div>
+          </div>
+          <div class="col-md-9">
+              <div id="YOLO">
+                <h1 class="become">
+
+                </h1>
+              </div>
+          </div>
+      </div>
+    </div>
+    <hr class="section3">
+    <script>
+      var padding = {top:20, right:40, bottom:0, left:0},
+w = 500 - padding.left - padding.right,
+h = 500 - padding.top  - padding.bottom,
+r = Math.min(w, h)/2,
+rotation = 0,
+oldrotation = 0,
+picked = 100000,
+oldpick = [],
+color = d3.scale.category20();//category20c()
+
+var data = [
+        {"label":"YOLO 1",  "value":1,  "YOLO":"TSLA $420 CALLS EXPIRY 4 MONTHS"}, // padding
+        {"label":"YOLO 2",  "value":1,  "YOLO":"THROW EVERYTHING IN CALLS TO WHATEVER COMPANY YOUR WIFE/HUSBAND LAST BOUGHT FROM"}, //font-family
+        {"label":"YOLO 3",  "value":1,  "YOLO":"INVERSE WHATEVER YOUR FINANCIAL ADVISOR TELLS YOU"}, //color
+        {"label":"YOLO 4",  "value":1,  "YOLO":"MU $90 CALLS EXPIRING IN 5 MONTHS"}, //font-weight
+        {"label":"YOLO 5",  "value":1,  "YOLO":"BUY PUTS ON ANY COMPANY THEN STAND NAKED OUTSIDE ONE OF THEIR STORES TO DETER FOOT TRAFFIC"}, //font-size
+        {"label":"YOLO 6",  "value":1,  "YOLO":"BUY LYFT CALLS THEN UNINSTALL AND REINSTALL THEIR APP OVER AND OVER TO BOOST THEIR DOWNLOAD COUNT"}, //background-color
+        {"label":"YOLO 7",  "value":1,  "YOLO":"TELL YOUR 2 YEAR OLD TO SAY ANY FOUR LETTERS THEN BUY CALLS IN WHATEVER TICKER THEY SPELL OUT"}, //nesting
+        {"label":"YOLO 8",  "value":1,  "YOLO":"$SPY 400 CALLS CAUSE WE HATE MONEY"}, //bottom
+        {"label":"YOLO 9",  "value":1,  "YOLO":"$NIO CALLS BECAUSE WE AREN'T DONE WITH THAT DUMPSTER FIRE"}, //sans-serif
+        {"label":"YOLO 10", "value":1, "YOLO":"AMD $50 CALLS FOR OUR QUEEN SUE BAE"}, //period
+        {"label":"YOLO 11", "value":1, "YOLO":"INVERSE THE TOP VOTED COMMENT ON R/WALLSTREEBETS; PUTS OR CALLS"}, //pound sign
+        {"label":"YOLO 12", "value":1, "YOLO":"BUY PUTS ON AMAZON THEN CHARGEBACK ALL YOUR PURCHASES SO THEY LOSE MONEY"}, //<body>
+        {"label":"YOLO 13", "value":1, "YOLO":"BUY PUTS ON THE BANKS THEN WITHDRAW ALL YOUR MONEY SO THE BANKS HAVE NO MONEY DUH"}, //<ul>
+        {"label":"YOLO 14", "value":1, "YOLO":"CALLS ON CAMPBELL THEN EAT EXCLUSIVELY SOUP FOR THE REST OF YOUR LIFE"}, //<h1>
+        {"label":"YOLO 15", "value":1, "YOLO":"EVERYTHING INTO HMNY EVEN THOUGH MOVIEPASS IS DEAD. CALLS CAUSE YOU REALLY HATE MONEY"}, //margin
+        {"label":"YOLO 16", "value":1, "YOLO":"FORD CALLS BECAUSE YOU'RE A BOOMER"}, //< >
+        {"label":"YOLO 17", "value":1, "YOLO":"LULULEMON  CALLS BECAUSE YOU CAN'T DEFEAT WHITE GIRLS"}, // { }
+        {"label":"YOLO 18", "value":1, "YOLO":"CALL YOUR MOM AND INSTEAD OF TELLING HER YOU LOVE HER ASK WHAT YOU SHOULD THROW ALL YOUR MONEY INTO. IN FACT, INVERSE YOUR MOM. PUTS OR CALLS"}, //<p>
+        {"label":"YOLO 19", "value":1, "YOLO":"GET A OUIJA BOARD AND ASK YOUR DEAD UNCLE AND CALLS INTO WHATEVER HIS SPRIT SAYS"}, //<!DOCTYPE html>
+        {"label":"YOLO 20", "value":1, "YOLO":"COPY WHATEVER YOU READ ON STOCKTWITS AND BUY CALLS ON IT"}, //<head>
+        {"label":"YOLO 21", "value":1, "YOLO":"EVERYTHING CALLS FOR SPY FD'S WHENEVER TRUMP TWEETS"}, // colon
+        {"label":"YOLO 22", "value":1, "YOLO":"TAKE OUT ANOTHER MORTGAGE THEN PUT IT IN ANY LOSING POSIITON YOU HAVE, SAME OPTIONS"}, // <style>
+        {"label":"YOLO 23", "value":1, "YOLO":"BUY WHATEVER SCRAPS OF LEHMAN BROTHERS ARE LEFT IN THE FORM OF CALLS"}, // .html
+        {"label":"YOLO 24", "value":1, "YOLO":"BUY BONDS BECAUSE YOU DON'T UNDERSTAND THEM"}, // HTML
+        {"label":"YOLO 25", "value":1, "YOLO":"IRON CONDORS ON $SNAP A DOLLAR APART, A WEEK BEFORE THEIR EARNINGS"}, // CSS
+        {"label":"YOLO 26", "value":1, "YOLO":"TAKE A LOAN AND BUYS CALLS FOR DISNEY WHENEVER A NEW MARVEL MOVIE COMES OUT"}, // JavaScript
+        {"label":"YOLO 27", "value":1, "YOLO":"TRADE FOREX AND DON'T UNDERSTAND ANYTHING CAUSE YOU DON'T HAVE THE BRAINN CELLS OR THE CAPACITY FOR IT"}, // border
+        {"label":"YOLO 28", "value":1, "YOLO":"BUY A BUNCH OF GAMEBOYS AND WAIT ANOTHER CENTURY FOR ITS VALUE TO GO UP. ALSO NINTENDO CALLS"},//semi-colon
+        {"label":"YOLO 29", "value":1, "YOLO":"CALLS ON ANY CHINESE STOCK YOU'VE NEVER HEARD OF"}, //100%
+        {"label":"YOLO 30", "value":1, "YOLO":"DRAW A BUNCH OF DUMB LINES ON SOME DUMB GRAPH AND PREDICT WHERE ITS GOING IN A WEEK THEN INVERSE YOUR INITIAL GUESS"} //comma
+];
+
+
+var svg = d3.select('#chart')
+.append("svg")
+.data([data])
+.attr("width",  w + padding.left + padding.right)
+.attr("height", h + padding.top + padding.bottom);
+
+var container = svg.append("g")
+.attr("class", "chartholder")
+.attr("transform", "translate(" + (w/2 + padding.left) + "," + (h/2 + padding.top) + ")");
+
+var vis = container
+.append("g");
+
+var pie = d3.layout.pie().sort(null).value(function(d){return 1;});
+
+// declare an arc generator function
+var arc = d3.svg.arc().outerRadius(r);
+
+// select paths, use arc generator to draw
+var arcs = vis.selectAll("g.slice")
+.data(pie)
+.enter()
+.append("g")
+.attr("class", "slice");
+
+
+arcs.append("path")
+.attr("fill", function(d, i){ return color(i); })
+.attr("d", function (d) { return arc(d); });
+
+// add the text
+arcs.append("text").attr("transform", function(d){
+    d.innerRadius = 0;
+    d.outerRadius = r;
+    d.angle = (d.startAngle + d.endAngle)/2;
+    return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -10) +")";
+})
+.attr("text-anchor", "end")
+.text( function(d, i) {
+    return data[i].label;
+});
+
+container.on("click", spin);
+
+
+function spin(d){
+
+container.on("click", null);
+
+//all slices have been seen, all done
+console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
+if(oldpick.length == data.length){
+    console.log("done");
+    container.on("click", null);
+    return;
+}
+
+var  ps       = 360/data.length,
+     pieslice = Math.round(1440/data.length),
+     rng      = Math.floor((Math.random() * 1440) + 360);
+    
+rotation = (Math.round(rng / ps) * ps);
+
+picked = Math.round(data.length - (rotation % 360)/ps);
+picked = picked >= data.length ? (picked % data.length) : picked;
+
+
+if(oldpick.indexOf(picked) !== -1){
+    d3.select(this).call(spin);
+    return;
+} else {
+    oldpick.push(picked);
+}
+
+rotation += 90 - Math.round(ps/2);
+
+vis.transition()
+    .duration(3000)
+    .attrTween("transform", rotTween)
+    .each("end", function(){
+
+        //mark YOLO as seen
+        d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+            .attr("fill", "#111");
+
+        //populate YOLO
+        d3.select("#YOLO h1")
+            .text(data[picked].YOLO);
+
+        oldrotation = rotation;
+    
+        container.on("click", spin);
+    });
+}
+
+//make arrow
+svg.append("g")
+.attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
+.append("path")
+.attr("d", "M-" + (r*.15) + ",0L0," + (r*.05) + "L0,-" + (r*.05) + "Z")
+.style({"fill":"black"});
+
+//draw spin circle
+container.append("circle")
+.attr("cx", 0)
+.attr("cy", 0)
+.attr("r", 60)
+.style({"fill":"white","cursor":"pointer"});
+
+//spin text
+container.append("text")
+.attr("x", 0)
+.attr("y", 15)
+.attr("text-anchor", "middle")
+.text("SPIN")
+.style({"font-weight":"bold", "font-size":"30px"});
+
+
+function rotTween(to) {
+var i = d3.interpolate(oldrotation % 360, rotation);
+return function(t) {
+return "rotate(" + i(t) + ")";
+};
+}
+
+
+function getRandomNumbers(){
+var array = new Uint16Array(1000);
+var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
+
+if(window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function"){
+    window.crypto.getRandomValues(array);
+    console.log("works");
+} else {
+    //no support for crypto, get crappy random numbers
+    for(var i=0; i < 1000; i++){
+        array[i] = Math.floor(Math.random() * 100000) + 1;
+    }
+}
+
+return array;
+}
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

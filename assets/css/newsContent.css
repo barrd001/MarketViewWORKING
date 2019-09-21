@@ -1,0 +1,37 @@
+.headline {
+    display: block;
+    border-top: 3px solid black;
+}
+a:link,a:visited, a:active {
+    color:#d05353;
+}
+a:hover {
+    color: blue;
+}
+.news {
+    width: 100%;
+    clear: both;
+    background-image: url(../images/lightScratch.png);
+    padding: 0px 0px 0px 0px;
+}
+.headline {
+    font-size: 25px;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: royalblue;
+}
+h2 {
+    color: black;
+    font-size: 50px !important;
+    float: left;
+}
+.content {
+    width: 70%;
+    color: black;
+    float: right;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

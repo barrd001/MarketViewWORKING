@@ -1,0 +1,122 @@
+html {
+    overflow-x:hidden;
+}
+body {
+    background-image: linear-gradient(to right, black, steelblue);
+}
+.container-fluid {
+    margin: 0px;
+    padding: 0px;
+    height: 1100px;
+}
+.container-fluid-new {
+    margin: 0px;
+    padding: 0px;
+    height: 500px;
+}
+.title {
+    margin: auto;
+    width: 100%;
+    border: 5px solid rgba(192,252,253,.7);
+    border-radius: 0;
+    padding: 13px 35px 12px;
+    color: #f0e6d2;
+    font-size: 150px;
+    font-family: leagueTitle;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    background: #1e2328;
+    background-image: transparent;
+    box-shadow: 0 0 0 0 transparent;
+    border-image: linear-gradient(#08abac 0,#01698b 51);
+    margin-bottom: 6rem;
+    overflow: hidden;
+}
+.join{
+    text-align: center;
+    color: #f0e6d2;
+    font-size: 80px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 0;
+    font-size: px;
+    margin-bottom: .3em;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.4);
+}
+.become{
+    text-align: center;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #c8aa6e;
+    font-size: 90px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: .3em;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.4);
+}
+.section {
+    margin-top: -5.9rem;
+    height: 20px;
+    background-image: linear-gradient(to right,#836323 0,#c3a568 51%,#836323)
+}
+.section1 {
+    margin-top: -5.9rem;
+    height: 20px;
+    background-image: linear-gradient(to right,#836323 0,#c3a568 51%,#836323)
+}
+.chart {
+}
+.yolo {
+    text-align: center;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #c8aa6e;
+    font-size: 100px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: .3em;
+    text-shadow: 2px 2px 6px rgba(0,0,0,.4);
+}
+.section2 {
+    margin-top: -5.9rem;
+    height: 20px;
+    background-image: linear-gradient(to right,#836323 0,#c3a568 51%,#836323)
+}
+.jumbotron {
+    background: url("../yolo/clouds.jpeg") no-repeat;
+    text-align: center;
+    background-size: cover;
+    background-position: center top;
+    padding: 80px 0px 100px;
+}
+.plane {
+    height:400px;
+    width: 100%;
+    background: url("../yolo/plane.jpg") no-repeat;
+    background-size: contain;
+    background-position: center top;
+    padding: 80px 0px 100px;
+}
+.box {
+    height:300px;
+    width: 100%;
+    background: url("./box_burned.png") no-repeat;
+    background-size: contain;
+    background-position: center top;
+    padding: 80px 0 100px;
+}
+.section3 {
+    margin: 0px;
+    padding: 0px;
+    height: 20px;
+    background-image: linear-gradient(to right,#836323 0,#c3a568 51%,#836323)
+}

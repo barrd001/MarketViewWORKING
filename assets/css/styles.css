@@ -1,0 +1,300 @@
+/* body {
+    background-image: url(../images/newYork.jpg);
+    background-size: cover;
+    color: #ece2d0;
+}
+
+.mainTitle {
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.contentWrapper {
+    background-color: #121723dc;
+
+}
+
+.contentWrapper {
+    margin: 5% auto 0 auto;
+    width: 50%;
+} */
+
+/* Graph Page Formatting
+============================================================== */
+
+
+
+
+
+
+/* body {
+    background: white;
+    background-size: cover;
+    color: #ece2d0;
+}
+
+.titleBackground {
+    background-image: url(../images/newYork.jpg);
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
+
+.mainTitle {
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.contentWrapper {
+    background-color: #121723dc;
+}
+
+.mainTitle {
+    background-color: rgba(135, 207, 235, 0);
+    margin-top: 50px;
+    padding: 5% 20px; */ /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
+    
+/*     -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    transform: skewY(-5deg);
+  }
+  
+  .mainTitle > .wrapper {
+    -webkit-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    -o-transform: skewY(5deg);
+    transform: skewY(5deg);
+  }  */
+
+
+
+
+
+
+/*   
+121723
+ece2d0
+*/
+
+
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+body {
+    background-image: url(../images/darkGrid.png);
+    background-attachment: fixed;
+    background-position: center;
+
+    background-size: repeat;
+}
+
+.orange {
+    color: #d05353;
+}
+#navbarText {
+  font-size:25px;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+}
+
+.large {
+    font-size: 3rem;
+}
+
+.linksContainer {
+    width: 100%;
+}
+
+
+
+
+/* Title Formatting
+============================================================== */
+
+
+  .title {
+      font-size: 5rem;
+  }
+
+  .titleContainer {
+    height: 100vh;
+    padding: 0 0 0 0;
+  }
+
+  .titleWrapper {
+    background-image: url(../images/lightScratch.png);
+    margin: 15% 0 0 0;
+    padding: 5% 0px; /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
+    
+    -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    transform: skewY(-5deg);
+    border-color: #d05353;
+  }
+  
+  .titleWrapper > .wrapper {
+    -webkit-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    -o-transform: skewY(5deg);
+    transform: skewY(5deg);
+  }
+
+  .signup {
+    margin-left: 77%;
+  }
+
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.986);
+  }
+
+  .nav-link {
+    color: #d05353;
+  }
+
+  .nav-link:hover { 
+    color: #b14848;
+  }
+
+  h1 {
+    font-weight: bolder;
+  }
+
+/* Graph Formatting
+============================================================== */
+  .graphContainer {
+    background-image: url(../images/lightScratch.png);
+    height: 100vh;
+    background-size: repeat;
+    opacity: .9;
+    padding: 1% 5% 5% 5%;
+  }
+
+  .searchRow {
+    width: 60%;
+    margin: 1% auto 0 auto !important; 
+    margin-bottom: 1.5rem !important;
+  }
+  #search-bar {
+    font-size: 30px;
+  }
+
+
+  .widget {
+    height: 80vh;
+  }
+
+/* News Formatting
+============================================================== */
+  .newsContainer {
+    height: 100vh;
+  }
+
+  .news {
+    background-image: url(../images/orangeTiles.png);
+    height: 80vh;
+  }
+
+  .savedNews {
+    background-image: url(../images/darkOrangeTiles.png);
+    height: 80vh;
+  }
+
+  .newsRow {
+    margin: 4% auto 0 auto !important;
+    width: 90%;
+    color: #ece2d0;
+  }
+
+  .newsWrapper {
+    background-image: url(../images/lightScratch.png);
+    overflow: scroll;
+    height: 85%;
+    padding: 1% 1% 1% 1%;
+  }
+
+  .savedNewsWrapper {
+    background-image: url(../images/lightScratch.png);
+    height: 85%;
+    padding: 2% 2% 2% 2%;
+  }
+
+  .article {
+    height: 80px;
+    background-color: white;
+    color: #121723;
+    padding-top: 1%;
+  }
+
+  .savedArticle {
+    height: 80px;
+    background-color: white;
+    color: #121723;
+    padding-top: 1%;
+  }
+
+/* Stats Formatting
+============================================================== */
+  .statsContainer {
+    background-image: url(../images/lightScratch.png);
+    height: 100vh;
+    background-size: repeat;
+    opacity: .9;
+    padding: 2% 2% 2% 2%;
+  }
+
+  .table {
+    color: #121723;
+    font-size: 40px;
+    background-color: #f2fffede;
+    margin: 0 0 0 0;
+/*     border-width: 1px;
+    border-color: #121723;
+    border-style: solid; */
+  }
+  td,th {
+    font-size: 30px !important;
+  }
+
+  .tableHead {
+    background-color: #49aaa5de;
+  }
+
+  table.table-bordered{
+    border:1px solid #121723;
+    margin-top:20px;
+  }
+  table.table-bordered > thead > tr > th{
+    border:1px solid #121723;
+  }
+  table.table-bordered > tbody > tr > td{
+    border:1px solid #121723;
+  }
+
+
+
+
+
+
+
+
+
+/* 
+  watchlist
+
+*/

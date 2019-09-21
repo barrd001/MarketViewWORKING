@@ -1,0 +1,317 @@
+<!DOCTYPE 'html'>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Stonks</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./assets/css/newsContent.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/styles.css"/>
+        <script src="https://use.fontawesome.com/releases/v5.10.2/js/all.js" data-auto-replace-svg="nest"></script>
+<!-- <link rel="icon" href="./assets/images/favicon.ico"> -->
+        <script src="https://unpkg.com/moment"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>        
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
+
+
+    </head>
+    <body>
+
+         <!-- navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <!-- brand sumbol -->
+            <a class="navbar-brand" href="#"><i style="color:green" class="fas fa-money-bill-wave large"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto linksContainer">
+                  <li class="nav-item signin logged-in" style='display:none;'>
+                    <a class="nav-link" href="#account-details" data-toggle='modal' data-target="#account-details" id='account'><i class="fas fa-account-details-alt"></i> Account</a>
+                  </li>  
+                  </li>
+                  <li class="nav-item active logged-in" style='display:none;'>
+                    <a class="nav-link" href="#graph-container">Graph<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item logged-in" style='display:none;'>
+                      <a class="nav-link" href="#news-container">News</a>
+                  </li>
+                  <li class="nav-item logged-in" style='display:none;'>
+                      <a class="nav-link" href="#stats-container">Stats</a>
+                  </li>
+                  <li class="nav-item logout logged-in" style='display:none;'>
+                      <a class="nav-link" href="#" id='logout'>Logout</a>
+                  </li>
+                  <li class="nav-item signup logged-out" style='display:none;'>
+                      <a class="nav-link" href="#signup-form" data-toggle="modal" data-target="#signup-Form" id='signup'><i class="fas fa-user-plus"></i> Sign up</a>
+                  </li>                    
+                  <li class="nav-item signin logged-out" style='display:none;'>
+                      <a class="nav-link" href="#signin-form" data-toggle='modal' data-target="#signin-form" id='signin'><i class="fas fa-sign-out-alt"></i> Sign in</a>
+                    </li>                    
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+
+            <div class="row titleRow">
+                <div class="col-lg-12 titleContainer">
+                    <div class="titleWrapper">
+                        <div class="text-center">
+                            <h1 class="title"> <i style="color:green" class="fas fa-money-bill-wave"></i> Fantasy Stocks <i style="color:green" class="fas fa-money-bill-wave"></i> </h1>
+                        </div>
+                    </div>     
+                </div>                    
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 graphContainer logged-in" id="graph-container">
+                    <div class="row searchRow">
+                        <div class="col-md-9 searchBar">
+                                <input type="text" class="form-control mb-2 mr-sm-2" id="search-bar" placeholder="Search Ticker">
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-primary mb-2" id="submit-button">Search</button>
+                        </div>
+                    </div>
+
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="col-lg-12 tradingview-widget-container widget">
+                            <div id="tradingview_a95cb" class="tradingView"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                            <script type="text/javascript">
+                        
+                            var newSearch = "TSLA";
+                            new TradingView.widget({
+                                "autosize": true,
+                                "symbol": newSearch,
+                                "interval": "D",
+                                "timezone": "Etc/UTC",
+                                "theme": "Dark",
+                                "style": "1",
+                                "locale": "en",
+                                "toolbar_bg": "#f1f3f6",
+                                "enable_publishing": false,
+                                "hide_top_toolbar": true,
+                                "withdateranges": true,
+                                "hide_side_toolbar": false,
+                                "allow_symbol_change": true,
+                                "container_id": "tradingview_a95cb"
+                            });
+                            
+                            $('#submit-button').on('click', function(event) {
+                            event.preventDefault();
+                            var searchBar = $('#search-bar').val().trim();
+                            newSearch = searchBar;
+                            console.log(searchBar);
+                            new TradingView.widget({
+                                "autosize": true,
+                                "symbol": newSearch,
+                                "interval": "D",
+                                "timezone": "Etc/UTC",
+                                "theme": "Dark",
+                                "style": "1",
+                                "locale": "en",
+                                "toolbar_bg": "#f1f3f6",
+                                "enable_publishing": false,
+                                "hide_top_toolbar": true,
+                                "withdateranges": true,
+                                "hide_side_toolbar": false,
+                                "allow_symbol_change": true,
+                                "container_id": "tradingview_a95cb"
+                                });
+                            });
+                        
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 newsContainer logged-in" id="news-container">
+                    <div class="row newsRow">
+
+                            <div class="col-lg-12 news">
+                                <h1>News</h1>
+
+                            <div class="col-lg newsWrapper">
+                                                         
+                            </div>
+
+                            </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 statsContainer logged-in" id="stats-container">
+                    <div class="col-lg-12 tableWrapper">
+                        <table class="table table-bordered">
+                            <thead class="tableHead">
+                                <tr>
+                                <th scope="col">Symbol</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Day High</th>
+                                <th scope="col">Day Low</th>
+                                <th scope="col">52 Week High</th>
+                                <th scope="col">52 Week Low</th>
+                                <th scope="col">Volume</th>
+                                <th scope="col">Volume Avg</th>
+                                <th scope="col">Day Change</th>
+                                <th scope="col">Day Percent</th>
+                                </tr>
+                            </thead>
+                            
+                        </table>                        
+                    </div>
+                        
+                </div>                
+            </div>
+
+
+
+
+
+
+        </div>
+        <!-- SIGN UP MODAL -->
+<div class="modal fade" id="signup-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-3">
+      <div class="md-form mb-5">
+        <i class="fas fa-envelope prefix grey-text"></i>
+        <input type="email" id="signup-email" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+      </div>
+      <div class="md-form mb-4">
+        <i class="fas fa-lock prefix grey-text"></i>
+        <input type="password" id="signup-pass" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+      </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-deep-orange" id='signup-submit' data-dismiss="modal">Sign up</button>
+    </div>
+  </div>
+</div> 
+</div>
+<!-- SIGN IN MODAL -->
+<div class="modal fade" id="signin-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-3">
+      <div class="md-form mb-5">
+        <i class="fas fa-envelope prefix grey-text"></i>
+        <input type="email" id="signin-email" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+      </div>
+      <div class="md-form mb-4">
+        <i class="fas fa-lock prefix grey-text"></i>
+        <input type="password" id="signin-pass" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+      </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-default" id='signin-submit' data-dismiss="modal">Login</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Account Details Modal -->
+<div class="modal fade" id="account-details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" style='margin: 0 auto;' id="modallabel">Account Details</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" id='account-body' style='margin: 0 auto;'>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" style='margin: 0 auto;' data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCnhjZy1y5OuDFkf0eb-5d6LXuDoY6y2ao",
+      authDomain: "market-view-7ba03.firebaseapp.com",
+      databaseURL: "https://market-view-7ba03.firebaseio.com",
+      projectId: "market-view-7ba03",
+      storageBucket: "market-view-7ba03.appspot.com",
+      messagingSenderId: "324258865048",
+      appId: "1:324258865048:web:529a40578f4322516755ed"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // make auth and db const
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    // update Database settings
+    // db.settings({timeStampsInSnapshots: true });
+  </script>
+          <script src="./assets/javascript/app.js"></script>
+          <script src="../Market-View/assets/javascript/auth.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>
